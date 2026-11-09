@@ -106,10 +106,23 @@ export default function InventoryForm() {
     }
   };
 
+  const handleSetPrimaryImage = async (imageId) => {
+    try {
+      const res = await api.patch(`/inventory/${id}/images/${imageId}/primary`);
+      setImages(res.data);
+    } catch (err) {
+      alert(err.response?.data?.error || 'Failed to set primary image');
+    }
+  };
+
   const handleDeleteImage = async (imageId) => {
     try {
-      await api.delete(`/inventory/${id}/images/${imageId}`);
-      setImages((imgs) => imgs.filter((i) => i.id !== imageId));
+      const res = await api.delete(`/inventory/${id}/images/${imageId}`);
+      if (res.data?.images) {
+        setImages(res.data.images);
+      } else {
+        setImages((imgs) => imgs.filter((i) => i.id !== imageId));
+      }
     } catch (err) {
       alert('Failed to delete image');
     }
@@ -283,9 +296,12 @@ export default function InventoryForm() {
             {/* Image Upload (edit mode only) */}
             {isEdit && (
               <section className="bg-white p-6 rounded-xl shadow-sm border border-outline-variant/30">
-                <h3 className="text-xs font-bold tracking-widest text-secondary uppercase mb-4 flex items-center">
-                  <span className="material-symbols-outlined text-sm mr-2">photo_library</span> Media Assets
-                </h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xs font-bold tracking-widest text-secondary uppercase flex items-center">
+                    <span className="material-symbols-outlined text-sm mr-2">photo_library</span> Media Assets
+                  </h3>
+                  <span className="text-[10px] text-secondary">Hover image to set primary</span>
+                </div>
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <label className="aspect-square rounded-lg bg-surface-container-low flex items-center justify-center border-2 border-dashed border-outline-variant hover:border-primary/50 transition-colors cursor-pointer group">
                     <input type="file" multiple accept="image/*" className="hidden" onChange={handleImageUpload} />
@@ -295,15 +311,39 @@ export default function InventoryForm() {
                     </div>
                   </label>
                   {images.map((img) => (
-                    <div key={img.id} className="aspect-square rounded-lg overflow-hidden group relative">
+                    <div
+                      key={img.id}
+                      className={`aspect-square rounded-lg overflow-hidden group relative ${
+                        img.isPrimary ? 'ring-2 ring-primary ring-offset-2' : ''
+                      }`}
+                    >
                       <img src={img.url.startsWith('http') ? img.url : `/uploads/${img.url}`} alt={img.altText} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <button type="button" onClick={() => handleDeleteImage(img.id)} className="text-red-400">
-                          <span className="material-symbols-outlined">delete</span>
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-2">
+                        {!img.isPrimary && (
+                          <button
+                            type="button"
+                            onClick={() => handleSetPrimaryImage(img.id)}
+                            className="flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-primary text-white text-[10px] font-bold uppercase tracking-wider hover:brightness-110 transition-all shadow"
+                            title="Set as Primary Image"
+                          >
+                            <span className="material-symbols-outlined text-xs">star</span>
+                            Set Primary
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteImage(img.id)}
+                          className="p-1.5 rounded-full bg-red-500/20 hover:bg-red-500/40 text-red-400 transition-colors"
+                          title="Delete Image"
+                        >
+                          <span className="material-symbols-outlined text-lg">delete</span>
                         </button>
                       </div>
                       {img.isPrimary && (
-                        <span className="absolute top-1 left-1 bg-primary text-white text-[8px] px-1.5 py-0.5 rounded font-bold">PRIMARY</span>
+                        <span className="absolute top-1.5 left-1.5 bg-primary text-white text-[9px] px-2 py-0.5 rounded font-bold flex items-center gap-1 shadow">
+                          <span className="material-symbols-outlined text-[11px]">star</span>
+                          PRIMARY
+                        </span>
                       )}
                     </div>
                   ))}

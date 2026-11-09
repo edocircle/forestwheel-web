@@ -178,6 +178,24 @@ router.post(
   }
 );
 
+// ── Set Primary Vehicle Image (Admin) ──────────────────
+router.patch(
+  '/:id/images/:imageId/primary',
+  authenticate,
+  authorize('SUPER_ADMIN', 'ADMIN'),
+  async (req, res) => {
+    try {
+      const images = await inventoryService.setPrimaryVehicleImage(
+        req.params.id,
+        req.params.imageId
+      );
+      res.json(images);
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+  }
+);
+
 // ── Delete Vehicle Image (Admin) ───────────────────────
 router.delete(
   '/:id/images/:imageId',
@@ -185,8 +203,11 @@ router.delete(
   authorize('SUPER_ADMIN', 'ADMIN'),
   async (req, res) => {
     try {
-      await inventoryService.deleteVehicleImage(req.params.id, req.params.imageId);
-      res.json({ message: 'Image deleted successfully' });
+      const images = await inventoryService.deleteVehicleImage(
+        req.params.id,
+        req.params.imageId
+      );
+      res.json({ message: 'Image deleted successfully', images });
     } catch (err) {
       res.status(400).json({ error: err.message });
     }

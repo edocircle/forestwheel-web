@@ -44,7 +44,7 @@ export async function listVehicles({
       take: limit,
       orderBy: { [sortBy]: sortOrder },
       include: {
-        images: { orderBy: { sortOrder: 'asc' } },
+        images: { orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }] },
         createdBy: {
           select: { id: true, fullName: true },
         },
@@ -63,7 +63,7 @@ export async function getVehicleById(id) {
   const vehicle = await prisma.vehicle.findUnique({
     where: { id },
     include: {
-      images: { orderBy: { sortOrder: 'asc' } },
+      images: { orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }] },
       createdBy: { select: { id: true, fullName: true } },
     },
   });
@@ -108,7 +108,7 @@ export async function updateVehicle(id, data, userId) {
     where: { id },
     data,
     include: {
-      images: { orderBy: { sortOrder: 'asc' } },
+      images: { orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }] },
     },
   });
 
@@ -163,9 +163,10 @@ export async function deleteVehicle(id, userId) {
  * Add images to a vehicle
  */
 export async function addVehicleImages(vehicleId, files) {
-  const existingCount = await prisma.vehicleImage.count({
-    where: { vehicleId },
-  });
+  const [existingCount, existingPrimary] = await Promise.all([
+    prisma.vehicleImage.count({ where: { vehicleId } }),
+    prisma.vehicleImage.findFirst({ where: { vehicleId, isPrimary: true } }),
+  ]);
 
   const imagesData = [];
   for (let i = 0; i < files.length; i++) {
@@ -185,7 +186,7 @@ export async function addVehicleImages(vehicleId, files) {
       url: fileUrl,
       altText: file.originalname,
       sortOrder: existingCount + i,
-      isPrimary: existingCount === 0 && i === 0,
+      isPrimary: !existingPrimary && i === 0,
     });
   }
 
@@ -193,7 +194,34 @@ export async function addVehicleImages(vehicleId, files) {
 
   return prisma.vehicleImage.findMany({
     where: { vehicleId },
-    orderBy: { sortOrder: 'asc' },
+    orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }],
+  });
+}
+
+/**
+ * Set a vehicle image as primary
+ */
+export async function setPrimaryVehicleImage(vehicleId, imageId) {
+  const image = await prisma.vehicleImage.findFirst({
+    where: { id: imageId, vehicleId },
+  });
+
+  if (!image) throw new Error('Image not found');
+
+  await prisma.$transaction([
+    prisma.vehicleImage.updateMany({
+      where: { vehicleId },
+      data: { isPrimary: false },
+    }),
+    prisma.vehicleImage.update({
+      where: { id: imageId },
+      data: { isPrimary: true },
+    }),
+  ]);
+
+  return prisma.vehicleImage.findMany({
+    where: { vehicleId },
+    orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }],
   });
 }
 
@@ -217,4 +245,23 @@ export async function deleteVehicleImage(vehicleId, imageId) {
   }
 
   await prisma.vehicleImage.delete({ where: { id: imageId } });
+
+  // If the deleted image was primary, promote the next available image
+  if (image.isPrimary) {
+    const nextImage = await prisma.vehicleImage.findFirst({
+      where: { vehicleId },
+      orderBy: { sortOrder: 'asc' },
+    });
+    if (nextImage) {
+      await prisma.vehicleImage.update({
+        where: { id: nextImage.id },
+        data: { isPrimary: true },
+      });
+    }
+  }
+
+  return prisma.vehicleImage.findMany({
+    where: { vehicleId },
+    orderBy: [{ isPrimary: 'desc' }, { sortOrder: 'asc' }],
+  });
 }
