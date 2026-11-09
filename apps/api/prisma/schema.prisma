@@ -1,0 +1,164 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum VehicleStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  IN_PROGRESS
+  SOLD
+  ARCHIVED
+}
+
+enum SettingType {
+  TEXT
+  IMAGE
+  HTML
+}
+
+model User {
+  id                String    @id @default(uuid())
+  email             String    @unique
+  passwordHash      String    @map("password_hash")
+  fullName          String    @map("full_name")
+  role              Role      @default(USER)
+  isActive          Boolean   @default(false) @map("is_active")
+  activationToken   String?   @map("activation_token")
+  activationExpires DateTime? @map("activation_expires")
+  createdAt         DateTime  @default(now()) @map("created_at")
+  updatedAt         DateTime  @updatedAt @map("updated_at")
+
+  vehicles     Vehicle[]     @relation("CreatedBy")
+  assignedLeads Lead[]       @relation("AssignedTo")
+  activityLogs ActivityLog[]
+  settingsUpdated WebSetting[] @relation("UpdatedBy")
+
+  @@map("users")
+}
+
+model Vehicle {
+  id               String        @id @default(uuid())
+  make             String
+  model            String
+  variant          String?
+  year             Int
+  mileage          Int           @default(0)
+  mileageUnit      String        @default("KM") @map("mileage_unit")
+  price            Decimal       @db.Decimal(12, 2)
+  currency         String        @default("SGD")
+  status           VehicleStatus @default(AVAILABLE)
+  chassisNumber    String?       @map("chassis_number")
+  engine           String?
+  transmission     String?
+  horsepower       String?
+  torque           String?
+  driveType        String?       @map("drive_type")
+  fuelEconomy      String?       @map("fuel_economy")
+  driverAssist     String?       @map("driver_assist")
+  infotainment     String?
+  soundSystem      String?       @map("sound_system")
+  connectivity     String?
+  color            String?
+  description      String?       @db.Text
+  editorialBy      String?       @map("editorial_by")
+  youtubeUrl       String?       @map("youtube_url")
+  featured         Boolean       @default(false)
+  inquiriesEnabled Boolean       @default(true) @map("inquiries_enabled")
+  fuelType         String?       @map("fuel_type")
+  owners           Int?          @map("owners")
+  registrationDate DateTime?     @map("registration_date")
+  coeExpiry        DateTime?     @map("coe_expiry")
+  createdById      String?       @map("created_by_id")
+  createdAt        DateTime      @default(now()) @map("created_at")
+  updatedAt        DateTime      @updatedAt @map("updated_at")
+
+  createdBy  User?          @relation("CreatedBy", fields: [createdById], references: [id])
+  images     VehicleImage[]
+
+  @@map("vehicles")
+}
+
+model VehicleImage {
+  id        String   @id @default(uuid())
+  vehicleId String   @map("vehicle_id")
+  url       String
+  altText   String?  @map("alt_text")
+  sortOrder Int      @default(0) @map("sort_order")
+  isPrimary Boolean  @default(false) @map("is_primary")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  vehicle Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  @@map("vehicle_images")
+}
+
+model Lead {
+  id               String     @id @default(uuid())
+  inquiryNumber    String     @unique @map("inquiry_number")
+  fullName         String     @map("full_name")
+  email            String
+  phone            String?
+  vehicleMake      String     @map("vehicle_make")
+  vehicleModel     String     @map("vehicle_model")
+  vehicleYear      Int?       @map("vehicle_year")
+  vehicleMileage   Int?       @map("vehicle_mileage")
+  registrationDate String?    @map("registration_date")
+  carPlate         String?    @map("car_plate")
+  accessCode       String?    @map("access_code")
+  notes            String?    @db.Text
+  status           LeadStatus @default(NEW)
+  assignedToId     String?    @map("assigned_to_id")
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @updatedAt @map("updated_at")
+
+  assignedTo User? @relation("AssignedTo", fields: [assignedToId], references: [id])
+
+  @@map("leads")
+}
+
+model WebSetting {
+  id        String      @id @default(uuid())
+  key       String      @unique
+  value     String      @db.Text
+  type      SettingType @default(TEXT)
+  updatedAt DateTime    @updatedAt @map("updated_at")
+  updatedById String?   @map("updated_by_id")
+
+  updatedBy User? @relation("UpdatedBy", fields: [updatedById], references: [id])
+
+  @@map("web_settings")
+}
+
+model ActivityLog {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  action     String
+  entityType String   @map("entity_type")
+  entityId   String?  @map("entity_id")
+  metadata   Json?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("activity_logs")
+}

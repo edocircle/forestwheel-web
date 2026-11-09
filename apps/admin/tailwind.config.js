@@ -1,0 +1,53 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#F68E13",
+        "on-primary": "#ffffff",
+        "primary-container": "#ffe0bd",
+        "on-primary-container": "#4c2700",
+        "surface": "#ffffff",
+        "on-surface": "#1c1b1b",
+        "surface-variant": "#f4f3f2",
+        "on-surface-variant": "#4d4639",
+        "surface-container-low": "#f7f7f7",
+        "surface-container": "#f1f1f1",
+        "surface-container-high": "#ebebeb",
+        "surface-container-highest": "#e2e2e2",
+        "outline": "#85736b",
+        "outline-variant": "#d1c5b8",
+        "background": "#fafafa",
+        "on-background": "#1c1b1b",
+        "secondary": "#555555",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#e5e2e1",
+        "tertiary": "#00668b",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#c8e6ff",
+        "on-tertiary-container": "#001e2f",
+        "error": "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#410002",
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px",
+      },
+      fontFamily: {
+        headline: ["Plus Jakarta Sans", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
+}

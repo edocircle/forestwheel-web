@@ -1,0 +1,9 @@
+{
+  "name": "forestwheel-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "apps/admin"
+  ]
+}

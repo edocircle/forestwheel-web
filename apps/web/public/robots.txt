@@ -1,0 +1,12 @@
+# ============================================
+# Robots.txt for Forest Wheel
+# ============================================
+
+User-agent: *
+Allow: /
+
+# Exclude backend and API endpoints if crawled here
+Disallow: /api/
+
+# Sitemap Link
+Sitemap: https://yourdomain.com/sitemap.xml

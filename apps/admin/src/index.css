@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1c5b8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #85736b;
+}
+
+/* Status badges */
+.badge-new { @apply bg-primary/10 text-primary; }
+.badge-contacted { @apply bg-surface-container-highest text-secondary; }
+.badge-in-progress { @apply bg-tertiary-container text-on-tertiary-container; }
+.badge-sold { @apply bg-error-container text-on-error-container; }
+.badge-archived { @apply bg-surface-variant text-on-surface-variant; }
+.badge-available { @apply bg-tertiary-container text-on-tertiary-container; }
+.badge-reserved { @apply bg-primary-container text-on-primary-container; }

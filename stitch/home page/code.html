@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forest Wheel | Automotive Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "primary": "#f68e13",
+                    "on-surface": "#1b1b1b",
+                    "inverse-surface": "#201f1f",
+                    "surface-container": "#f8f9fa",
+                    "surface-dim": "#f1f3f5",
+                    "on-secondary-fixed": "#1b1b1c",
+                    "tertiary-fixed": "#004c6e",
+                    "on-tertiary-fixed-variant": "#c8e6ff",
+                    "on-tertiary-fixed": "#e7f5ff",
+                    "background": "#ffffff",
+                    "secondary": "#474746",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#554335",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#00344d",
+                    "secondary-fixed-dim": "#474746",
+                    "inverse-on-surface": "#f8f9fa",
+                    "outline": "#a38c7b",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#e5e2e1",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#c8c6c5",
+                    "inverse-primary": "#ffb778",
+                    "tertiary-container": "#00b2fb",
+                    "on-tertiary-container": "#ffffff",
+                    "on-secondary-container": "#1b1b1c",
+                    "on-primary-fixed": "#2e1500",
+                    "on-primary-container": "#ffffff",
+                    "tertiary": "#006696",
+                    "surface-tint": "#f68e13",
+                    "surface-container-highest": "#dee2e6",
+                    "surface-bright": "#ffffff",
+                    "on-primary-fixed-variant": "#6c3a00",
+                    "primary-container": "#f68e13",
+                    "surface": "#ffffff",
+                    "primary-fixed": "#ffdcc1",
+                    "primary-fixed-dim": "#ffb778",
+                    "outline-variant": "#d5cdc4",
+                    "surface-container-low": "#f8f9fa",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-high": "#e9ecef",
+                    "secondary-fixed": "#c8c6c5",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Outfit", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 glass-nav flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#F68E13] uppercase font-headline">Forest Wheel</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label" href="#">Inventory</a>
+<a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label" href="#">Sell Your Car</a>
+<a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label" href="#">About Us</a>
+</div>
+<button class="bg-[#F68E13] text-white px-6 py-2 rounded-lg font-bold hover:scale-95 transition-transform duration-200 font-label">
+        Contact Us
+    </button>
+</nav>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative h-screen flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Car" class="w-full h-full object-cover" data-alt="Sleek black high-performance sports car parked in a dark, moody concrete garage with dramatic orange accent lighting reflecting on the metallic paint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5PVFOQ1xmned-EGxWKCDxn0iBYCXphWNRPxeie34MY0a3LFlgfbwJ_IMLU3XN8v5X0-PRYEjO5AcofG4_XRBuZVCywh_4tVVMpukKd7GadCFwaX5MFDjdoiqC52wo2RaGHObGY_JB-Hjl6UJLku3rmwBCtO0g123c4_LNe-2XYTeoJlwpsEqgKnQOPFuYE56pKKKh0gV6HtS-w7bvx8Z8-m7VC-cBpEFpaLYNlROoE3u8YeMBn9Gdzdm4fx_Sx3lsev7EAycAerQ9"/>
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-20 max-w-4xl">
+<h1 class="font-headline font-black text-6xl md:text-8xl leading-none tracking-tighter text-on-surface mb-6">
+                Find Your <span class="text-[#F68E13]">Perfect</span> Ride
+            </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-xl mb-10 font-body leading-relaxed">
+                Your Journey Begins at Forest Wheel. Experience the curation of high-velocity engineering and timeless design.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-[#F68E13] text-white font-bold rounded-xl text-lg hover:scale-105 transition-transform shadow-lg shadow-[#F68E13]/20">
+                    Browse Inventory
+                </button>
+<button class="px-8 py-4 border border-outline-variant bg-white/60 backdrop-blur-md text-on-surface font-bold rounded-xl text-lg hover:bg-white transition-colors">
+                    Sell Your Car
+                </button>
+</div>
+</div>
+</section>
+<!-- Section 2: Trust Strip -->
+<section class="bg-surface-container-low py-10 border-y border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-[#F68E13] font-headline font-black text-4xl">500+</span>
+<span class="text-on-surface-variant font-label uppercase tracking-widest text-xs mt-1">Vehicles Sold</span>
+</div>
+<div class="flex flex-col items-center md:items-start border-l border-outline-variant/30 md:pl-8">
+<div class="flex items-center gap-1">
+<span class="text-[#F68E13] font-headline font-black text-4xl">4.9</span>
+<span class="material-symbols-outlined text-[#F68E13]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-on-surface-variant font-label uppercase tracking-widest text-xs mt-1">Google Rating</span>
+</div>
+<div class="flex flex-col items-center md:items-start border-l border-outline-variant/30 md:pl-8">
+<span class="text-[#F68E13] font-headline font-black text-4xl">15+</span>
+<span class="text-on-surface-variant font-label uppercase tracking-widest text-xs mt-1">Years Experience</span>
+</div>
+<div class="flex flex-col items-center md:items-start border-l border-outline-variant/30 md:pl-8">
+<span class="text-[#F68E13] font-headline font-black text-4xl">24h</span>
+<span class="text-on-surface-variant font-label uppercase tracking-widest text-xs mt-1">Valuation Time</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Featured Vehicles (Asymmetric Carousel) -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8 mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline font-bold text-4xl tracking-tight mb-2 text-on-surface">Featured Showroom</h2>
+<p class="text-on-surface-variant">The latest arrivals at the Forest Wheel Atelier.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant hover:bg-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant hover:bg-white transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto px-8 no-scrollbar pb-8">
+<!-- Car Card 1 -->
+<div class="min-w-[320px] md:min-w-[450px] group cursor-pointer bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img alt="Porsche 911" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Side profile of a silver Porsche 911 in a minimalist studio setting with soft top-down lighting and clean shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCplwTSiYXM83HcDiUUQLxx7xiyfAFWGiizz7WF-k7RMYnGq2JhMBRFoyGLGXeT0fcoGrbIHgCVutMt_AEmljn1zX5AEQ4mRQC1tR91WpqU5_MabFz4sL8StV-LmeLZgEqadTQG65cxWxowko-kl7n6bAmZhkPehMCghut3tkyDAwS98QIINz0rfCDrGOuXpyGxw3lLwmKxS75YOtRK64I_cjKNIhj26TsShHlJOI-UUeqycqe6m8va9zLrpdYsBfCf2N8qOPa3wJt"/>
+<div class="absolute top-4 right-4 bg-[#F68E13] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white">
+                        Available
+                    </div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline font-bold text-2xl group-hover:text-[#F68E13] transition-colors text-on-surface">Porsche 911 GT3</h3>
+<p class="text-on-surface-variant font-body">2023 • 1,200 miles</p>
+</div>
+<p class="text-xl font-bold font-headline text-on-surface">$189,500</p>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="min-w-[320px] md:min-w-[450px] group cursor-pointer bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img alt="Chevrolet Corvette" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Front view of a brilliant blue Chevrolet Corvette C8 on a scenic coastal road at sunset, high contrast cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeq29D3C9tjusHEWqf2euKJlMp5jcvEMhLU31Rgxl_6TidLFEgyMsi-yjVgo_JlXjiYnYJUFIWACK02Sk-fgJbYP74m2MstlsLLGlRFqw8EAfxofyZvHUn4Wkzj_epVUfoY6fSzzrMvS8zlLmF2nsk-c_T_-IBYzm8HUi1zUXshDa4qh9ka27v9nhBMC8bC2hADy_5Z0vcFuiUac4jqoyGyWFo2Uo6hZcbrRxcVgBzJpCgKGIaMPzvbQpk9M4yn2fwP9LaSdR_P59H"/>
+<div class="absolute top-4 right-4 bg-error px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white">
+                        Sold
+                    </div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline font-bold text-2xl group-hover:text-[#F68E13] transition-colors text-on-surface">Corvette C8 Z06</h3>
+<p class="text-on-surface-variant font-body">2022 • 4,500 miles</p>
+</div>
+<p class="text-xl font-bold font-headline text-on-surface">$115,000</p>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="min-w-[320px] md:min-w-[450px] group cursor-pointer bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img alt="Ferrari Roma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Three-quarter rear view of a dark grey Ferrari Roma in an elegant urban cobblestone alley at dusk, moody atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8xCAcVoszREnRDTE0dwkWoSDSBoGTSB4qhfUvoHMvJSpwkUar1cyLw8qY80LmkJue68OzLqPFYkUKAwsH_rNN7Ml2eceR6Segb-Zsu-QOjpTC_2pil3tP5wO3tvzSfoi0PSMixIEUmpe80UK4jSsPkw2eMiavsPxhd82CciDwTorCSyUaO8NkQd5Ar7MB5XCWVG7wOT8cSASIrWWP-lJBkb4b9d8BcMm9U0jSU63dWnJcxlP73auqxFpUpTfScDe6yqS4tdy-bWhw"/>
+<div class="absolute top-4 right-4 bg-[#F68E13] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white">
+                        Available
+                    </div>
+</div>
+<div class="flex justify-between items-start px-2">
+<div>
+<h3 class="font-headline font-bold text-2xl group-hover:text-[#F68E13] transition-colors text-on-surface">Ferrari Roma</h3>
+<p class="text-on-surface-variant font-body">2021 • 800 miles</p>
+</div>
+<p class="text-xl font-bold font-headline text-on-surface">$245,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Why Forest Wheel (Bento Grid) -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 text-center">
+<h2 class="font-headline font-black text-5xl tracking-tight mb-4 text-on-surface">Why the Atelier?</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">We don't just sell cars; we curate high-performance lifestyles with radical transparency and expert precision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Feature 1 -->
+<div class="md:col-span-8 bg-surface-container-low border border-outline-variant/30 p-10 rounded-2xl flex flex-col justify-between group hover:bg-white hover:shadow-lg transition-all duration-300">
+<div>
+<div class="w-14 h-14 bg-[#F68E13]/10 rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-[#F68E13] text-3xl">verified</span>
+</div>
+<h3 class="text-3xl font-headline font-bold mb-4 text-on-surface">Verified 300-Point Inspections</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Every vehicle undergoes a rigorous mechanical and aesthetic audit by our factory-trained technicians. No bolt is left unturned.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Gold Standard Quality</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-[#F68E13]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-4 bg-[#F68E13] p-10 rounded-2xl flex flex-col justify-between text-white shadow-lg shadow-[#F68E13]/20">
+<div>
+<div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h3 class="text-3xl font-headline font-bold mb-4">Transparent Pricing</h3>
+<p class="font-body opacity-90">No hidden fees. No dealership markups. The price you see is the final price of excellence.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 bg-surface-container-low border border-outline-variant/30 p-10 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
+<div class="w-14 h-14 bg-surface-variant rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-on-surface text-3xl">play_circle</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-surface">YouTube Reviews</h3>
+<p class="text-on-surface-variant font-body">Deep-dive video walkthroughs for every vehicle in our inventory.</p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-8 bg-surface-container-high p-10 rounded-2xl relative overflow-hidden group">
+<img alt="Luxury interior" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" data-alt="Interior close-up of a high-end luxury car featuring carbon fiber details and orange leather stitching, extreme detail, macro photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrFxdfB2wgDMIkGH6_b7a3B8vlr-3y4MLV6srfiEKgBkIOgZB_xOE9z9ksYlt9jaQfo5sdZ4QHEr7AwfkDi6l1ZFtWAo1ue97Ovv07GpluorBlC2ZB4x0waRpifRDDD-NvziWT116O4obPL60buBYN9Z1M-3sj_5XP372MeWL8aZelf2m9F9uW1vmF10xtE7WP8yIHm4RCvZNLqMRpixL82f_7DGV59Kj4yyOg4iqOUPvrtmWOTjFlkavRJppB9EbInxRYYM7jjTux"/>
+<div class="relative z-10">
+<h3 class="text-3xl font-headline font-bold mb-4 text-on-surface">Concierge Experience</h3>
+<p class="text-on-surface-variant text-lg max-w-md">Private viewings and enclosed nationwide delivery. We manage the logistics; you enjoy the drive.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: CTA Sell Banner -->
+<section class="py-24 px-8 bg-surface-container">
+<div class="max-w-7xl mx-auto relative rounded-3xl overflow-hidden bg-white p-12 md:p-20 text-center shadow-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Classic Car Silhouette" class="w-full h-full object-cover opacity-10 grayscale" data-alt="Dramatic silhouette of a vintage sports car against a dark grey background with minimal lighting hitting the curves of the body" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD09nI6BR0uYSskXRiJDv-ZhPxXJ-ov10HKWkjtJ3i_uaRJN1Aisg_-olU8V83rhZOuoKsMWLU8iXooSa6QqiWTSET8CJ5zQKbYc2nJt2BEi6XnkiFAjJ8tccziCtyrYuaqQm9RGkTohyxN0EteOf2CK8w48CDfJtLwda-nBJHkLWCehlSo-yRIB5tdvh_hV6FqGlfKNPHOXnAVzxBF67IIQVAbcGKVotK1BUqFzc0PwDj5ePDXN4rk0QFGPd8EcRurbS9lm98L58Jk"/>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline font-black text-5xl md:text-7xl mb-6 tracking-tighter uppercase text-on-surface">Time to Upgrade?</h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mb-12 font-body">Get a premium market valuation for your car in under 24 hours. We buy high-performance and luxury vehicles directly.</p>
+<button class="px-12 py-5 bg-[#F68E13] text-white font-black rounded-full text-xl uppercase tracking-widest shadow-xl shadow-[#F68E13]/30 hover:scale-105 transition-transform">
+                    Sell Your Car Today
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#1b1b1b] py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-12 max-w-7xl mx-auto">
+<div class="flex flex-col space-y-4">
+<div class="text-xl font-bold text-[#F68E13] font-headline">Forest Wheel</div>
+<p class="text-[#c8c6c5] text-sm font-body leading-relaxed">
+                Automotive Atelier specialized in high-performance curation and luxury vehicle acquisition.
+            </p>
+<div class="flex gap-4 pt-4">
+<span class="material-symbols-outlined text-[#c8c6c5] cursor-pointer hover:text-[#F68E13] transition-colors">public</span>
+<span class="material-symbols-outlined text-[#c8c6c5] cursor-pointer hover:text-[#F68E13] transition-colors">video_library</span>
+<span class="material-symbols-outlined text-[#c8c6c5] cursor-pointer hover:text-[#F68E13] transition-colors">camera_enhance</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-white mb-6 uppercase tracking-widest text-xs">Inventory</h4>
+<ul class="space-y-4">
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">New Arrivals</a></li>
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">Pre-Owned</a></li>
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">Classics</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-white mb-6 uppercase tracking-widest text-xs">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">About Us</a></li>
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">Sell Your Car</a></li>
+<li><a class="text-[#c8c6c5] text-sm hover:text-[#F68E13] transition-colors font-body" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-white mb-6 uppercase tracking-widest text-xs">Atelier Location</h4>
+<div class="space-y-4">
+<p class="text-[#c8c6c5] text-sm font-body">1200 Velocity Drive,<br/>Automotive District, CA 90210</p>
+<p class="text-[#c8c6c5] text-sm font-body">+1 (800) FOR-WHL</p>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-12 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-[#c8c6c5] text-xs font-label">© 2024 Forest Wheel Automotive Atelier</span>
+<div class="flex gap-6">
+<a class="text-[#c8c6c5] text-xs hover:text-white transition-colors font-label" href="#">Terms of Service</a>
+<a class="text-[#c8c6c5] text-xs hover:text-white transition-colors font-label" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

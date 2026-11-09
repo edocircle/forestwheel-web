@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  .glass-nav {
+    backdrop-filter: blur(20px);
+  }
+  
+  .text-shadow-hero {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .primary-gradient {
+    background: linear-gradient(135deg, #f68e13 0%, #ffb778 100%);
+  }
+}

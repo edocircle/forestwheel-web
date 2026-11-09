@@ -1,0 +1,73 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-lowest": "#ffffff",
+        "on-primary": "#ffffff",
+        "primary": "#f68e13",
+        "on-surface": "#1c1b1b",
+        "inverse-surface": "#1c1b1b",
+        "surface-container": "#f4f4f4",
+        "surface-dim": "#f7f7f7",
+        "on-secondary-fixed": "#1b1b1c",
+        "tertiary-fixed": "#c8e6ff",
+        "on-tertiary-fixed-variant": "#004c6e",
+        "on-tertiary-fixed": "#001e2f",
+        "background": "#ffffff",
+        "secondary": "#474746",
+        "on-error": "#ffffff",
+        "on-surface-variant": "#554335",
+        "on-error-container": "#410002",
+        "tertiary-fixed-dim": "#88ceff",
+        "secondary-fixed-dim": "#c8c6c5",
+        "inverse-on-surface": "#f4f4f4",
+        "outline": "#857365",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#e5e2e1",
+        "error": "#ba1a1a",
+        "on-secondary-fixed-variant": "#474746",
+        "inverse-primary": "#ffb778",
+        "tertiary-container": "#00b2fb",
+        "on-tertiary-container": "#ffffff",
+        "on-secondary-container": "#1b1b1c",
+        "on-primary-fixed": "#2e1500",
+        "on-primary-container": "#2e1500",
+        "tertiary": "#006492",
+        "surface-tint": "#f68e13",
+        "surface-container-highest": "#e5e2e1",
+        "surface-bright": "#fbf8f7",
+        "on-primary-fixed-variant": "#6c3a00",
+        "primary-container": "#ffb778",
+        "surface": "#ffffff",
+        "primary-fixed": "#ffdcc1",
+        "primary-fixed-dim": "#ffb778",
+        "outline-variant": "#d8c3b4",
+        "surface-container-low": "#f7f7f7",
+        "surface-variant": "#f4f4f4",
+        "surface-container-high": "#ededed",
+        "secondary-fixed": "#e5e2e1",
+        "error-container": "#ffdad6",
+        "on-tertiary": "#ffffff",
+        "on-background": "#1c1b1b"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "fontFamily": {
+        "headline": ["Outfit", "Manrope", "sans-serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
+      }
+    },
+  },
+  plugins: [],
+}

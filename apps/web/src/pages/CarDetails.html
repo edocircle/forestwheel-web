@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Forest Wheel | 2024 Toyota Camry SE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@700;800;900&amp;family=Manrope:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#f68e13",
+                        "on-surface": "#1a1a1a",
+                        "inverse-surface": "#313030",
+                        "surface-container": "#f1f1f1",
+                        "surface-dim": "#e0e0e0",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "tertiary-fixed": "#004c6e",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-tertiary-fixed": "#001e2f",
+                        "background": "#f8f9fa",
+                        "secondary": "#474746",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4d4d4d",
+                        "on-error-container": "#410002",
+                        "tertiary-fixed-dim": "#006691",
+                        "secondary-fixed-dim": "#5e5e5d",
+                        "inverse-on-surface": "#f5f5f5",
+                        "outline": "#857366",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-primary": "#ffb778",
+                        "tertiary-container": "#00b2fb",
+                        "on-tertiary-container": "#001e2f",
+                        "on-secondary-container": "#1b1b1c",
+                        "on-primary-fixed": "#2e1500",
+                        "on-primary-container": "#2e1500",
+                        "tertiary": "#006691",
+                        "surface-tint": "#f68e13",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-bright": "#ffffff",
+                        "on-primary-fixed-variant": "#6c3a00",
+                        "primary-container": "#f68e13",
+                        "surface": "#ffffff",
+                        "primary-fixed": "#ffdcc1",
+                        "primary-fixed-dim": "#ffb778",
+                        "outline-variant": "#d5c3b6",
+                        "surface-container-low": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-high": "#ebe9e8",
+                        "secondary-fixed": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Outfit", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+    <!-- TopNavBar (Shared Component) -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-black/5 flex justify-between items-center px-8 py-4 max-w-full">
+        <div class="flex items-center gap-8">
+            <span class="text-2xl font-black tracking-tighter text-[#F68E13] uppercase font-headline">Forest
+                Wheel</span>
+            <div class="hidden md:flex gap-6">
+                <a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label"
+                    href="#">Inventory</a>
+                <a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label"
+                    href="#">Sell Your Car</a>
+                <a class="text-on-surface font-medium transition-colors duration-300 hover:text-[#F68E13] font-label"
+                    href="#">About Us</a>
+            </div>
+        </div>
+        <button
+            class="bg-[#F68E13] text-white px-6 py-2 rounded-lg font-bold hover:scale-95 transition-transform duration-200">Contact
+            Us</button>
+    </nav>
+    <main class="pt-24 pb-20 px-4 md:px-12 max-w-[1600px] mx-auto">
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-on-surface border border-black/5 hover:bg-surface-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <h1 class="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase text-on-surface">
+                    2024 Toyota Camry SE</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <button
+                    class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-outline-variant hover:bg-surface-container transition-colors text-sm font-medium text-on-surface">
+                    <span class="material-symbols-outlined text-sm">share</span>
+                    Share
+                </button>
+                <button
+                    class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-outline-variant hover:bg-surface-container transition-colors text-sm font-medium text-on-surface">
+                    <span class="material-symbols-outlined text-sm">favorite</span>
+                    Save
+                </button>
+            </div>
+        </header>
+        <!-- Main Gallery & Specs Side-by-Side -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left: Gallery Section -->
+            <div class="lg:col-span-8 space-y-4">
+                <div
+                    class="relative rounded-2xl overflow-hidden bg-white border border-black/5 shadow-sm aspect-[16/9]">
+                    <img alt="2024 Toyota Camry SE Hero" class="w-full h-full object-cover"
+                        data-alt="Modern silver luxury sedan parked in a minimalist architectural setting with clean lines and moody evening shadows"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeEwvhDfhzifakg3fU-ftWXXrPVEb9ULgWdbUPCr3QuBGtfZpsooEeKc3K2tRjWbp27YFloURQDhVIc_2fmWeTWJZxc7YY344QwOh7DJQbzRAaKlooOR4GHvW2engUGpmlF43rwdlCR4PiG2YzK07Hrhwpf_3aX_HhNwRkLTlI1PTP-pSNUac4gOpr2dcYwZQfmqA46eNaoiYPCjd5oLW2P-lzBFAKmvBb_X2Rk9pg571IicnthvpDG3WuNjRPlGaLRJwI_ha7gb2g" />
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="px-4 py-1.5 rounded-full glass-panel text-tertiary font-bold text-xs uppercase tracking-widest border border-tertiary/20">New
+                            Arrival</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        class="aspect-square rounded-xl overflow-hidden bg-white group cursor-pointer border-2 border-primary shadow-sm">
+                        <img alt="Camry Thumb 1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            data-alt="Side profile view of a metallic silver luxury sedan highlighting its sleek aerodynamic silhouette against a dark studio background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDICw_tkL2HQbXnMtGJRhjHJoGnr0L9aj-UaDmfFITSI-ptHjJQlvIdHDdLNtJm8muWiJXI4LmbBRDJlITy90Qxlkvlp4qTQfUUjRt-hWGA14D1dM3fpS-ptJUr7_-F10cAXu2K-O7VYMh7pw0HtUWxh-8-ogjFT0n8Gw3A9XZUvbUawBOtDN_qMLM7AtGfNA2mlJkXOSxytan9QgGGc8pveY3lBkJgMsUDFHo-tZiHq9O0n9ChDN9jwKrqdd3iyxfgdvtysIw6PR_u" />
+                    </div>
+                    <div
+                        class="aspect-square rounded-xl overflow-hidden bg-white group cursor-pointer border border-black/5 shadow-sm">
+                        <img alt="Camry Thumb 2"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            data-alt="Close up of a luxury car steering wheel and digital dashboard glowing with high tech interface in a dark interior"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFgW76_LdFbyBhXNDIzu6HZaTkN2zNIwtxRNWiD_KYohyDUgARgs3WbXTDiE89a-MLOa2krj5dq4p7-jifEd0fft7er3y4auy6PpBfIt4TBmidNLb5Ml_nYQlDqcAILEgceUCrMfQ2Pyo5UvKFC7WE50-hh0hAS21uDyNDxy-RBrOhKHMOZ9cCwcI72ZA8ym3nVUcKGfB7KPxABlLXU3zgoF8PqNoY6kUjDtyYpqVygICcX-CjQwrmC9I2tG7FqHih1kqROn0HqOMA" />
+                    </div>
+                    <div
+                        class="aspect-square rounded-xl overflow-hidden bg-white group cursor-pointer border border-black/5 shadow-sm">
+                        <img alt="Camry Thumb 3"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            data-alt="Interior view of premium black leather car seats with detailed stitching and soft ambient interior lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEJKamB1lQq2l6WD0qt_rll4_1gu0IdJUcWKeRYQJT5rKGrQq14qWA_YvWnSmIxwy8IfTXlFwrAJHtJPODgvn9X2r0rUG4_DQh9yTbkzubZOtNHajjeTsZ5RTDhOTH02B0B8TQZURK2CnzW14dEgH7eombUkZxUBzJcOx1RqRntN41I7kVWwkcTpdSRRtsTrPsSd_QkGnQH0bxeX5BGSjgABhQaw9iBQdapxkPtX3bhmxF1lJVDjn2sfz4v_sqijGd-AVdpTHe1fI4" />
+                    </div>
+                    <div
+                        class="aspect-square rounded-xl overflow-hidden bg-white group cursor-pointer border border-black/5 shadow-sm relative">
+                        <img alt="Camry Thumb 4"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform brightness-50"
+                            data-alt="Rear view of a modern sports sedan showing sleek LED tail lights and dual exhaust in a dimly lit garage"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8GSkkjGd-k-3Gw89F0EDV2HzzsD-RtsnxvQDIXmmrXq_V7G7y1mLMOhsSFt5aXWBpCDroM1uDUrycT42M6IzKjVw2t-77l9vCqKPvUTWMH46BKfh5LglfjDMy73AkAIxz8Ewo1j2ZkqFLGGPzOMXJ1ZMzVDzKKvkUQpDnKJJiNrCfR5Ywf2H-IEfPQk2368u51-aTWutylsOvAbub-NaNanbDuuN75bnzXvMzdrf5_RdL1p4B36tJVZ8Q2D5Z0UUTBT1MZ1qlL7n" />
+                        <div class="absolute inset-0 flex items-center justify-center font-bold text-lg text-white">+12
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Sticky Specs Panel -->
+            <div class="lg:col-span-4 sticky top-24">
+                <div class="bg-white rounded-2xl p-8 border border-black/5 shadow-sm space-y-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+                            <span
+                                class="text-xs font-bold text-tertiary uppercase tracking-widest font-label">Available</span>
+                        </div>
+                        <h2 class="text-5xl font-black font-headline tracking-tighter text-on-surface">$28,500</h2>
+                        <p class="text-on-surface-variant text-sm mt-1">Excluding taxes &amp; licensing</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-black/5">
+                            <span class="text-on-surface-variant font-medium">Mileage</span>
+                            <span class="font-bold text-on-surface">1,250 Miles</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-black/5">
+                            <span class="text-on-surface-variant font-medium">Engine</span>
+                            <span class="font-bold text-on-surface">2.5L 4-Cyl</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-black/5">
+                            <span class="text-on-surface-variant font-medium">Transmission</span>
+                            <span class="font-bold text-on-surface">8-Speed Auto</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-black/5">
+                            <span class="text-on-surface-variant font-medium">Exterior</span>
+                            <span class="font-bold text-on-surface">Celestial Silver</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined">mail</span>
+                            Inquire About This Car
+                        </button>
+                        <button
+                            class="w-full bg-surface-container text-on-surface py-4 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-colors">
+                            Schedule a Test Drive
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video & Full Specs Section -->
+        <section class="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-7 space-y-12">
+                <div>
+                    <h3
+                        class="text-2xl font-black font-headline uppercase mb-6 flex items-center gap-3 text-on-surface">
+                        <span class="w-8 h-1 bg-primary"></span>
+                        Video Walkthrough
+                    </h3>
+                    <div
+                        class="aspect-video rounded-2xl overflow-hidden bg-surface-container relative group border border-black/5 shadow-sm">
+                        <img alt="Video Preview"
+                            class="w-full h-full object-cover brightness-95 group-hover:scale-105 transition-transform duration-700"
+                            data-alt="Cinematic wide shot of a luxury sedan on a winding coastal road at sunset with golden highlights on the car's body"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0mMQzP_e7QWfXtRucDPkaY0I4BkTdeGwECvwJ__bthCYiLovp1nJC7iGulTPFASxyYMwEQb2qgakxUU-w9rdfsuupdLY0he05Sa3fGg7DFDGkF7THNBOfkhonTLNeeK4hR4Fd-5HfTwibimIv3vIayYi5CFvReVLvP1pwej84RTZwWGdOee7e4bmqwriINe47iO3H8pqXyuWyQUun6cbChoounxXUNtAeRSRieXgbPOey2WYFBBzktw7Gc9Q95SYsI9Q8J1yZQumL" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform cursor-pointer">
+                                <span class="material-symbols-outlined text-4xl"
+                                    style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3
+                        class="text-2xl font-black font-headline uppercase mb-6 flex items-center gap-3 text-on-surface">
+                        <span class="w-8 h-1 bg-primary"></span>
+                        Technical Specifications
+                    </h3>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2">
+                            <div class="p-6 space-y-4 border-r border-black/5">
+                                <h4 class="text-primary font-bold uppercase text-xs tracking-widest font-label">
+                                    Performance</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Horsepower</span><span
+                                            class="text-on-surface font-medium">203 hp @ 6,600 rpm</span></div>
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Torque</span><span
+                                            class="text-on-surface font-medium">184 lb-ft @ 5,000 rpm</span></div>
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Drive Type</span><span
+                                            class="text-on-surface font-medium">Front Wheel Drive</span></div>
+                                    <div class="flex justify-between text-sm"><span class="text-on-surface-variant">Fuel
+                                            Economy</span><span class="text-on-surface font-medium">28 City / 39
+                                            Hwy</span></div>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <h4 class="text-primary font-bold uppercase text-xs tracking-widest font-label">Safety
+                                    &amp; Tech</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Driver Assist</span><span
+                                            class="text-on-surface font-medium">Toyota Safety Sense™ 2.5+</span></div>
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Infotainment</span><span
+                                            class="text-on-surface font-medium">9-in. Touchscreen</span></div>
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Sound System</span><span
+                                            class="text-on-surface font-medium">JBL® Premium Audio</span></div>
+                                    <div class="flex justify-between text-sm"><span
+                                            class="text-on-surface-variant">Connectivity</span><span
+                                            class="text-on-surface font-medium">Apple CarPlay &amp; Android Auto</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Side Commentary/Trust Box -->
+            <div class="lg:col-span-5">
+                <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary shadow-sm">
+                    <h4 class="text-xl font-black font-headline uppercase mb-4 text-on-surface">Forest Wheel's
+                        Perspective</h4>
+                    <p class="text-on-surface-variant leading-relaxed italic mb-6">
+                        "The 2024 Camry SE continues to redefine the sports sedan segment with its aggressive styling
+                        and surprisingly sharp handling. This specific Celestial Silver model represents the perfect
+                        balance of daily reliability and high-end aesthetic appeal. It's a testament to engineering
+                        longevity."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white border border-black/5">
+                            <img alt="Expert" class="w-full h-full object-cover"
+                                data-alt="Professional portrait of a male luxury car consultant with a confident expression in a high-end office environment"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAARl3h85I3K08S7I6to0ZbUkHWUbBDuZlfjzYG6z_UNF8uxNwCxClqSy35RVof-x2gSnDgX22hZDqmFiu5xNPxmRnfqb0ctmupc5GYq_ZSIzw0tan0LXjffkaf7nbBg3c3VR-mUe3wWbf5Sii0H73bbvepzUWo8xVOHOT8IVAXcDUjeJELVrneDSlDZ-n9IA-GmP_sxC_5i8g6z2e5BsQZTQXaceFsn-KLx3_o-wECICoqSy37UN7h89PbCIBbhVexDb7ZbnvwVwr9" />
+                        </div>
+                        <div>
+                            <p class="font-bold text-on-surface">Marcus Sterling</p>
+                            <p class="text-xs text-primary uppercase font-label">Chief Curator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Related Vehicles Carousel -->
+        <section class="mt-24">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <p class="text-primary font-bold uppercase text-xs tracking-[0.2em] mb-2 font-label">Curated
+                        Selection</p>
+                    <h3 class="text-4xl font-black font-headline uppercase tracking-tighter text-on-surface">Related
+                        Vehicles</h3>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="w-12 h-12 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm text-on-surface">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-12 h-12 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm text-on-surface">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-6 overflow-x-auto no-scrollbar pb-8">
+                <!-- Related Card 1 -->
+                <div
+                    class="min-w-[320px] md:min-w-[400px] bg-white rounded-2xl overflow-hidden group border border-black/5 shadow-sm">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img alt="Toyota Avalon"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="Close up of a premium black performance sedan driving on a highway with blurred motion background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvLzm_7Q2Wb98M9_GCjEWLb6whHvp09FO87F3lN-UilKxTg5VjoRxjOIy-ju1G1Tiy817NUXoJYuvHvx_5qHjUtH3zk49pFhGIM3EbA3n4qBzlsRQnv5KU35zrGABSsTXiyCXnUyCuQwt17SXNAi6OQwoE2tmBmDdg8hqaRGkttBon8TKjztqVpEmJLrJqyTiwt2eclpFJyCovBr6bhrjRuDiTgbk-kvFGGF_E1_ikszNEYLs2EJ9Z9VaD7-h-ovNpbaNvqqNfP_C5" />
+                        <div
+                            class="absolute top-3 right-3 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface border border-black/5 shadow-sm">
+                            Available</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold font-headline mb-1 text-on-surface">2023 Toyota Avalon XSE</h4>
+                        <p class="text-on-surface-variant text-sm mb-4">12,400 Miles • Midnight Black</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black font-headline text-primary">$34,200</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Card 2 -->
+                <div
+                    class="min-w-[320px] md:min-w-[400px] bg-white rounded-2xl overflow-hidden group border border-black/5 shadow-sm">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img alt="Toyota RAV4"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="Luxury white SUV parked in a desert landscape at dusk with soft lighting reflecting off its clean body lines"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ58G6yMH5nQMIl_JzryN4NrdKPqDZhcdCMJoLQhRmn6-2zuKT4mVNiRLt0PgdjgOc5rf_CuPpnCHxcDqGctbjKRq3dFgY08vGPi9rgofQmx67POjM_Sy-yd-Lbb-vrrqKCSkcti-zINURYF3ESB1lLfpjb2T1nXakQ_34m4l3Eowp9Y5hDDCON6DLNuDNB3YVdysT6xmSGb19622ZfCE3TzVX67BPQgK_GjSL2ArYWbjMJZ7YQwdS1zvTYOjYNB-3tbQ_rfBjqplP" />
+                        <div
+                            class="absolute top-3 right-3 px-3 py-1 bg-error-container/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-on-error-container shadow-sm">
+                            Reserved</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold font-headline mb-1 text-on-surface">2024 Toyota RAV4 Hybrid</h4>
+                        <p class="text-on-surface-variant text-sm mb-4">New • Pearl White</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black font-headline text-primary">$39,800</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Card 3 -->
+                <div
+                    class="min-w-[320px] md:min-w-[400px] bg-white rounded-2xl overflow-hidden group border border-black/5 shadow-sm">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img alt="Toyota Corolla"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="Dynamic shot of a red sports car speeding through an urban environment with city lights reflecting in the paint"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZQp1CKBd7Xs6bYOhOLaZK9ITk5REariMVST53YEOVZgYsv9XLMDwArCCt95TR_FwCaYLSSGmuhGL_xu1w_stYk0vFxPlwaMSRYGI5uklSrMHkaioGrLMPj_ffUZRT_b5N90Q6KqxDacgF8_TeAs1LAGRShcAR-8IkC3_5XBXYk4gG_voAGm7LQ5s_KXrVOI1dpfg3D8SNnPlSmSe_7z28qXDAGovk2fUbTncGgQrTswJeZF-3lytge-nbraJVZPIlmshMjGINFJ71" />
+                        <div
+                            class="absolute top-3 right-3 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface border border-black/5 shadow-sm">
+                            Available</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold font-headline mb-1 text-on-surface">2024 Toyota Corolla GR</h4>
+                        <p class="text-on-surface-variant text-sm mb-4">50 Miles • Supersonic Red</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black font-headline text-primary">$45,000</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer (Shared Component) -->
+    <footer class="bg-[#1a1a1a] py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-12 max-w-7xl mx-auto">
+            <div class="space-y-4">
+                <span class="text-xl font-bold text-[#F68E13] font-headline uppercase">Forest Wheel</span>
+                <p class="text-gray-400 text-sm leading-relaxed">The premier destination for high-performance automotive
+                    excellence and curated luxury mobility.</p>
+            </div>
+            <div>
+                <h4 class="text-[#F68E13] font-headline font-bold mb-4">Inventory</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors font-label" href="#">All Vehicles</a></li>
+                    <li><a class="hover:text-white transition-colors font-label" href="#">New Arrivals</a></li>
+                    <li><a class="hover:text-white transition-colors font-label" href="#">Classic Forest Wheel</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[#F68E13] font-headline font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors font-label" href="#">About Us</a></li>
+                    <li><a class="hover:text-white transition-colors font-label" href="#">Sell Your Car</a></li>
+                    <li><a class="hover:text-white transition-colors font-label" href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[#F68E13] font-headline font-bold mb-4">Contact</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>1200 Forest Wheel Dr.</li>
+                    <li>Beverly Hills, CA 90210</li>
+                    <li>+1 (555) 012-3456</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-white/5 text-center text-gray-500 text-xs">
+            © 2024 Forest Wheel Automotive Forest Wheel
+        </div>
+    </footer>
+</body>
+
+</html>
